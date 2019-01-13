@@ -19,6 +19,7 @@ class CashRegister
           @total += new_price
       else
         @total += price
+        @list << title
       end
       previous_total
     end
@@ -38,7 +39,6 @@ class CashRegister
     end
     
     def items
-      @list << 1
       @list
     end  
     
