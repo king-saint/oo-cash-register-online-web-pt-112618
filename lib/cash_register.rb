@@ -14,9 +14,14 @@ class CashRegister
     def add_item(title, price, quantity=0)
       previous_total = @total
       @lastTransaction = price
+      limit = 0
       if quantity != 0
         new_price = quantity * price
           @total += new_price
+            while limit < quantity
+              @list << title
+              limit += 1
+            end
       else
         @total += price
         @list << title
