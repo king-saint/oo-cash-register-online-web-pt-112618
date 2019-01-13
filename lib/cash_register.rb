@@ -12,10 +12,10 @@ class CashRegister
         @total
     end
     
-    def add_item(title, price, quantity=nil)
+    def add_item(title, price, quantity=0)
       previous_total = @total
       @lastTransaction = price
-      if quantity != nil
+      if quantity != 0
         new_price = quantity * price
           @total += new_price
       else
@@ -39,7 +39,7 @@ class CashRegister
     end
     
     def items
-      
+      self.add_item(title, price, quantity=0)
     end  
     
     def void_last_transaction
