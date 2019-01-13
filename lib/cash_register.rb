@@ -1,1 +1,48 @@
-
+class CashRegister
+  attr_accessor :total, :discount
+  @product_arr = []
+  
+    def initialize(discount=0)
+      @discount = discount
+      @total = 0
+      
+    end  
+    
+    def total
+        @total
+    end
+    
+    def add_item(title, price, quantity=nil)
+      previous_total = @total
+      @product_arr << title
+      if quantity != nil
+        new_price = quantity * price
+          @total += new_price
+      else
+        @total += price
+      end
+      previous_total
+    end
+    
+    def apply_discount
+      new_price = 0
+      
+        if @discount > 0
+          @discount = @total * (@discount * 0.01)
+          @total = @total - @discount
+          return "After the discount, the total comes to $#{@total.round}."
+           @total = new_price - @discount
+        else
+          return "There is no discount to apply."
+        end
+       
+    end
+    
+    def items
+      return @product_arr
+    end  
+    
+    def void_last_transaction
+    end
+  
+end
