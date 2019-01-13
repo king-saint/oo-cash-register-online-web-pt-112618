@@ -1,6 +1,6 @@
 class CashRegister
   attr_accessor :total, :discount, :lastTransaction
-  
+  @list = Array.new
   
     def initialize(discount=0)
       @discount = discount
@@ -39,7 +39,7 @@ class CashRegister
     end
     
     def items
-      self.add_item(title, price, quantity=0)
+      @list
     end  
     
     def void_last_transaction
