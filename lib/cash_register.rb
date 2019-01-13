@@ -14,7 +14,7 @@ class CashRegister
     
     def add_item(title, price, quantity=nil)
       previous_total = @total
-      @product_arr << title
+      
       if quantity != nil
         new_price = quantity * price
           @total += new_price
@@ -39,10 +39,11 @@ class CashRegister
     end
     
     def items
-      return @product_arr
+      
     end  
     
     def void_last_transaction
+      
     end
   
 end
