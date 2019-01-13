@@ -1,6 +1,8 @@
 class CashRegister
   attr_accessor :total, :discount, :lastTransaction
-  @list = Array.new
+    def initialize
+        @list = Array.new
+      end
   
   
     def initialize(discount=0)
